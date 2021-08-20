@@ -91,4 +91,4 @@ docker run --net=host --name test-001 --rm -it test:v1.0 /bin/bash
 #########################################################
 # solve read only file system
 docker run --privileged --net=host --name test-001 --rm -it test:v1.0 /bin/bash
-docker run --privileged --net=host --cap-add=ALL -v /mnt/huge:/mnt/huge -v /lib/modules:/lib/modules:ro -v /sys/bus/pci/devices:/sys/bus/pci/devices -v /sys/devices/system/node:/sys/devices/system/node -v /dev:/dev --name etrex-001 --rm -it test:v1.0 /bin/bash
+docker run --privileged --net=host --cap-add=ALL -v /mnt/huge:/mnt/huge -v /lib/modules:/lib/modules:ro -v /sys/bus/pci/devices:/sys/bus/pci/devices -v /sys/devices/system/node:/sys/devices/system/node -v /dev:/dev --name test-001 --rm -it test:v1.0 /bin/bash
