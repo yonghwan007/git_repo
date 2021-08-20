@@ -1,0 +1,20 @@
+1. download
+cd /home/tools/
+wget https://downloads.python.org/pypy/pypy3.6-v7.3.3-linux64.tar.bz2
+tar -xjf pypy3.6-v7.3.3-linux64.tar.bz2
+mv pypy3.6-v7.3.3-linux64 pypy3.6
+ln -s pypy3.6/bin/pypy3 pypy3
+export PYTHONPATH=/home/tools/pypy3.6
+
+
+2. pip install
+#curl -O https://gist.githubusercontent.com/elijah/bc00d6b43365ec4278ab/raw/fba0dc030c351fcd225ac93f442a31dacedb6d8f/distribute_setup.py
+#./pypy3 distribute_setup.py
+
+wget https://bootstrap.pypa.io/get-pip.py
+./pypy3 get-pip.py
+ln -s pypy3.6/bin/pip pypy3-pip
+
+
+3. packages install
+./pypy3 -m pip install --isolated --no-deps --no-compile --no-cache-dir --disable-pip-version-check -t pypy3.6/site-packages -r 3pp_python3_pkg.list
